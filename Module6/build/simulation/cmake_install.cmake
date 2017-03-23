@@ -1,8 +1,8 @@
-# Install script for directory: /home/stagsted/RMUAST/src/simulation
+# Install script for directory: /home/stagsted/UAST/Module6/src/simulation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/stagsted/RMUAST/install")
+  set(CMAKE_INSTALL_PREFIX "/home/stagsted/UAST/Module6/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/stagsted/RMUAST/build/simulation/catkin_generated/installspace/simulation.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/stagsted/UAST/Module6/build/simulation/catkin_generated/installspace/simulation.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simulation/cmake" TYPE FILE FILES
-    "/home/stagsted/RMUAST/build/simulation/catkin_generated/installspace/simulationConfig.cmake"
-    "/home/stagsted/RMUAST/build/simulation/catkin_generated/installspace/simulationConfig-version.cmake"
+    "/home/stagsted/UAST/Module6/build/simulation/catkin_generated/installspace/simulationConfig.cmake"
+    "/home/stagsted/UAST/Module6/build/simulation/catkin_generated/installspace/simulationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simulation" TYPE FILE FILES "/home/stagsted/RMUAST/src/simulation/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simulation" TYPE FILE FILES "/home/stagsted/UAST/Module6/src/simulation/package.xml")
 endif()
 

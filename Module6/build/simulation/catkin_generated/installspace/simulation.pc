@@ -1,8 +1,8 @@
-prefix=/home/stagsted/RMUAST/install
+prefix=/home/stagsted/UAST/Module6/install
 
 Name: simulation
 Description: Description of simulation
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/stagsted/RMUAST/install/lib 
+Libs: -L/home/stagsted/UAST/Module6/install/lib 
 Requires: 

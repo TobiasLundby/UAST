@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MarkerLocater.dir/src/markerLocator.cpp.o"
   "CMakeFiles/MarkerLocater.dir/src/ImgConverter.cpp.o"
-  "/home/stagsted/RMUAST/devel/lib/simulation/MarkerLocater.pdb"
-  "/home/stagsted/RMUAST/devel/lib/simulation/MarkerLocater"
+  "/home/stagsted/UAST/Module6/devel/lib/simulation/MarkerLocater.pdb"
+  "/home/stagsted/UAST/Module6/devel/lib/simulation/MarkerLocater"
 )
 
 # Per-language clean rules from dependency scanning.

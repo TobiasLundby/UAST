@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/stagsted/RMUAST/src/simulation/src/neural.cpp
+/home/stagsted/UAST/Module6/src/simulation/src/neural.cpp
 geometry_msgs/PoseStamped.h
 -
 geometry_msgs/TwistStamped.h

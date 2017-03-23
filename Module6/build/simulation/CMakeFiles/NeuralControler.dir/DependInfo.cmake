@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/stagsted/RMUAST/src/simulation/src/neural.cpp" "/home/stagsted/RMUAST/build/simulation/CMakeFiles/NeuralControler.dir/src/neural.cpp.o"
+  "/home/stagsted/UAST/Module6/src/simulation/src/neural.cpp" "/home/stagsted/UAST/Module6/build/simulation/CMakeFiles/NeuralControler.dir/src/neural.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,8 +19,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/opt/ros/kinetic/include/opencv-3.2.0"
-  "/opt/ros/kinetic/include/opencv-3.2.0/opencv"
+  "/opt/ros/kinetic/include/opencv-3.2.0-dev"
+  "/opt/ros/kinetic/include/opencv-3.2.0-dev/opencv"
   )
 
 # Targets to which this target links.

@@ -1,0 +1,7 @@
+markerlocator.launch
+(launch file made for a marker of order 7 which is 3 black bars and 3 white bars on the marker)
+ - catkin_ws/src/MarkerLocator/launch/
+
+iris.sdf
+(This file adds a red box to the bottom of the drone and adds a camera to this box which is a ros topic)
+ - Firmware/Tools/sitl_gazebo/models/iris/

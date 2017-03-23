@@ -1,2 +1,2 @@
 simulation
--DCATKIN_DEVEL_PREFIX=/home/stagsted/RMUAST/devel -DCMAKE_INSTALL_PREFIX=/home/stagsted/RMUAST/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/stagsted/UAST/Module6/devel -DCMAKE_INSTALL_PREFIX=/home/stagsted/UAST/Module6/install -G Unix Makefiles

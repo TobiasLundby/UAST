@@ -1,8 +1,8 @@
-prefix=/home/stagsted/RMUAST/devel
+prefix=/home/stagsted/UAST/Module6/devel
 
 Name: simulation
 Description: Description of simulation
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/stagsted/RMUAST/devel/lib 
+Libs: -L/home/stagsted/UAST/Module6/devel/lib 
 Requires: 

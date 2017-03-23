@@ -128,7 +128,7 @@ int main(int argc, char **argv){
 	int rightX = 0;
 	int rightY = 0;
 
-	if ((file = open("/dev/input/js1", O_RDONLY)) < 0){
+	if ((file = open("/dev/input/js0", O_RDONLY)) < 0){
 		printf("Missing device!\n");
 		return 1;
 	}
