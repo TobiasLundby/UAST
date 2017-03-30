@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD="/home/stagsted/UAST/Module6/build"
-export ROS_PACKAGE_PATH="/home/stagsted/RMUAST/src:/home/stagsted/UAST/Module6/src:/opt/ros/kinetic/share"

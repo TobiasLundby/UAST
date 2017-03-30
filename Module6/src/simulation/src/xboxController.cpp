@@ -128,7 +128,7 @@ int main(int argc, char **argv){
 	int rightX = 0;
 	int rightY = 0;
 
-	if ((file = open("/dev/input/js0", O_RDONLY)) < 0){
+	if ((file = open("/dev/input/js1", O_RDONLY)) < 0){
 		printf("Missing device!\n");
 		return 1;
 	}
@@ -164,7 +164,6 @@ int main(int argc, char **argv){
 			if (event.number == 1) leftY = event.value;
 			if (event.number == 3) rightX = event.value;
 			if (event.number == 4) rightY = event.value;
-			std::cout << event.value << std::endl;
 			if (event.number == 7 && event.value == pow(2, 15) - 1){
 				std_srvs::Empty empty;
 				resetWorld.call(empty);
