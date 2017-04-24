@@ -58,7 +58,7 @@ class NMEA_data_parser:
    GSA_HDOP = 16
    GSA_VDOP = 17
    GSA_checksum = 18
-   
+
 
    #### Constructors ###
    def __init__(self):
@@ -104,7 +104,7 @@ class NMEA_data_parser:
    def plot_altitude(self):
       print 'Generating altitude vs. time plot'
       if len(self.altitude) == 0:
-         print 'No altitude information'   
+         print 'No altitude information'
       else:
          fig1 = plt.figure()
          fig1.canvas.set_window_title('Altitude vs. time')
@@ -119,8 +119,8 @@ class NMEA_data_parser:
    def plot_tracked_satellites(self):
       print 'Generating tracked satellites vs. time plot'
       if len(self.satellites_tracked) == 0:
-         print 'No altitude information'   
-      else:    
+         print 'No altitude information'
+      else:
          fig2 = plt.figure()
          fig2.canvas.set_window_title('Tracked satellites vs. time')
          plt.plot(self.time, self.satellites_tracked)
@@ -137,11 +137,11 @@ class NMEA_data_parser:
       length = len(splitted[0]) # get length of the first part
       degree = splitted[0][0:length-2] # Degrees are anything but the last two digits
       minutes = splitted[0][length-2:length]+'.'+splitted[1] # combine the minutes
-      minutes_in_deg = float(minutes)/float(60) # .d = M.m/60 
+      minutes_in_deg = float(minutes)/float(60) # .d = M.m/60
       degree = float(degree) + float(minutes_in_deg) # D.d = D + .d
       return degree
 
-   # Generate KML-file with drone track. 
+   # Generate KML-file with drone track.
    def generate_track_file(self,filename,name,description,size):
       if len(self.latitude) == 0:
          print 'No track points'
@@ -165,7 +165,7 @@ class NMEA_data_parser:
          track = kmlclass()  # Instantiate object
          track.begin(filename,name,description,size) # Create the file
          prev_color = '' # For decision of new segment
-         first = True 
+         first = True
          for i in range(0,len(self.latitude)): # For all pairs of GGA and GSA messages
             if(self.latitude[i] != 'x' and self.longtitude[i] != 'x'):
                # Deside color and description based on PDOP value
@@ -189,7 +189,7 @@ class NMEA_data_parser:
                   color = 'grey'
                   seg_name = 'level5'
                   seg_desc = 'PDOP below 6'
-               else: 
+               else:
                   color = 'red'
                   seg_name = 'level6'
                   seg_desc = 'PDOP above 6'
