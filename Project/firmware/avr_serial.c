@@ -54,7 +54,7 @@
 
 #define FOSC 		16000000	/* oscillator frequency [Hz] */
 #define BAUD 		57600		/* baud rate */
-#define USART_1					/* serial port */
+#define USART_1				/* serial port */
 /* #define DOUBLE_SPEED_MODE */
 
 /***************************************************************************/
@@ -161,6 +161,12 @@ void serial_init(void)
 	ob_head = 0;
 	ob_tail = 0;
 	tx_busy = FALSE;
+
+/*From Neerup - same as above, just dynamic above due to defines*/
+//UCSR0B = (1<<TXEN0)|(1<<RXEN0);     /* enable tx and rx */
+//UBRR0H = (unsigned char) ((8)>>8);  /* 8 is from AT90can128 table, page 202. 8 mhz, 57600 bps */
+//UBRR0L = (unsigned char) (8);       /* 8 is from AT90can128 table, page 202. 8 mhz, 57600 bps */
+//UCSR0C = (1<<UCSZ00)|(1<<UCSZ01);       /* asynchronous 8N1 */
 }
 /***************************************************************************/
 #ifdef USART

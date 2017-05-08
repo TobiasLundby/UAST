@@ -39,7 +39,7 @@
 #############################################################################
 
 PROJECT=main
-SOURCES=main.c avr_serial.c
+SOURCES=main.c avr_serial.c I2C_slave.c
 MMCU=at90can128
 CC=avr-gcc
 AVRDUDE=avrdude -p c128 -c avrisp2 -P /dev/ttyUSB0

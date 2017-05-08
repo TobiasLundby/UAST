@@ -39,13 +39,21 @@
 ****************************************************************************/
 /* includes */
 #include <stdlib.h>
+#include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
+
 #include "fmctrl_def.h"
+
 #include "avr_serial.h"
+#include "I2C_slave.h"
 
 /***************************************************************************/
 /* defines */
+
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
 
 #define false					0
 #define true					1
@@ -77,6 +85,9 @@ char led_state;
 char led_signal;
 char led_count;
 char but1;
+
+// buffer used to convert integer to string
+char buffer[3];
 
 /***************************************************************************/
 void sched_init(void)
@@ -149,12 +160,48 @@ void sched_update (void)
 		t1ms_cnt = 0;
 
 	/* each 10 ms */
-	if (t1ms_cnt % 10 == 0) /* each 10 ms */
+	if (t1ms_cnt % 10 == 0) /* each 10 ms (but note delay (100) in function) */
 	{
 		wdt_reset(); /* reset watchdog */
-		led_update();
+		//led_update();
 	}
 
+	if (t1ms_cnt % 10 == 0) /* each 10 ms (but note delay in function) */
+	{
+		// convert receiver buffer index 0 to character array and send it via UART
+		//itoa(rxbuffer[0], buffer, 10);
+		//buffer[0] = '1';
+		//buffer[1] = '0';
+		//buffer[2] = '0';
+		//serial_tx_string(buffer);
+		serial_tx('2');
+		if (serial_rx_avail()) {
+			while (serial_rx_avail()) {
+				char tmp_char = serial_rx();
+				//serial_tx(tmp_char);
+			}
+
+			// if (led_state == LED_STATE_ON) {
+			// 	led_state = LED_STATE_OFF;
+			// 	INT_LED_OFF;
+			// } else {
+			// 	led_state = LED_STATE_ON;
+			// 	INT_LED_ON;
+			// }
+		}
+		txbuffer[0] = '1';
+		txbuffer[1] = '2';
+		txbuffer[2] = '3';
+		txbuffer[3] = '4';
+		txbuffer[4] = '5';
+		if (rxbuffer[0] == 'a' ) {
+			led_state = LED_STATE_OFF;
+			INT_LED_OFF;
+		} else if (rxbuffer[0] == 'b') {
+			led_state = LED_STATE_ON;
+			INT_LED_ON;
+		}
+	}
 
 
 	/* EXAMPLE: running a task periodically */
@@ -189,7 +236,11 @@ int main(void)
 	sched_init(); /* initialize the scheduler */
 	led_init(); /* initialize led */
 	//button_init(); /* initialize button */
+
 	serial_init(); /* initialize serial communication */
+
+	I2C_init(0x32); // initalize as slave with address 0x32 (just select you address)
+
 	sei(); /* enable interrupts */
 	wdt_enable (WDTO_15MS); /* enable watchdog reset at approx 15 ms (ref. p.58) */ /* This is reset every 10ms when the uC is running as intended */
 
