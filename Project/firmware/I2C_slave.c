@@ -21,6 +21,7 @@ ISR(TWI_vect){
 		TWCR |= (1<<TWIE) | (1<<TWINT) | (1<<TWEA) | (1<<TWEN);	// clear TWI interrupt flag, prepare to receive next byte and acknowledge
 	}
 	else if( (TWSR & 0xF8) == TW_SR_DATA_ACK ){ // data has been received in slave receiver mode
+		rxbuffer[0] = 'b';
 		data = TWDR; // save the received byte inside data
 		if(buffer_address == 0xFF){ // check wether an address has already been transmitted or not
 			buffer_address = data;
